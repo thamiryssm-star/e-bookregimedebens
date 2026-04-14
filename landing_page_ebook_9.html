@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regimes de Bens no Casamento — E-book · Thamirys Silvera Martin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F3E8;
+    --cream-dark: #EAE7D6;
+    --sage: #8FA87A;
+    --sage-light: #B2C49E;
+    --sage-dark: #6A8A57;
+    --bronze: #B5955C;
+    --bronze-light: #D4B882;
+    --bronze-dark: #8C6E38;
+    --charcoal: #1C1C16;
+    --charcoal-mid: #3A3A30;
+    --charcoal-light: #6E6E5E;
+    --white: #FDFCF5;
+    --red-soft: #C0614A;
+    --transition: 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body {
+    -webkit-overflow-scrolling: touch;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── UTILITY ── */
+  .ornament {
+    display: block;
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+    margin: 0 auto;
+  }
+  .ornament.left { margin: 0; }
+  .section-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--sage-dark); display: block; margin-bottom: 16px;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    background: var(--charcoal);
+    position: relative; overflow: hidden;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .hero-pattern {
+    position: absolute; top:0; left:0; right:0; bottom:0; opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='1.5' fill='%23F3F2E9'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%23F3F2E9'/%3E%3Ccircle cx='80' cy='0' r='1.5' fill='%23F3F2E9'/%3E%3Ccircle cx='0' cy='80' r='1.5' fill='%23F3F2E9'/%3E%3Ccircle cx='80' cy='80' r='1.5' fill='%23F3F2E9'/%3E%3C/svg%3E");
+  }
+  .hero-glow {
+    position: absolute; top:0; left:0; right:0; bottom:0; pointer-events: none;
+    background: radial-gradient(ellipse 55% 45% at 15% 85%, rgba(143,168,122,0.16) 0%, transparent 60%);
+  }
+  .hero-left {
+    position: relative; z-index: 1;
+    padding: 80px 60px 80px 80px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 300px;
+    flex: 1 1 300px;
+    min-width: 0;
+  }
+  .hero-kicker {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--sage-light); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-kicker::before {
+    content: '';
+    display: block; width: 40px; height: 1px;
+    background: var(--bronze);
+  }
+  h1.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 4vw, 4.2rem);
+    font-weight: 700; color: #F5F3E8;
+    line-height: 1.08; margin-bottom: 12px;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--sage-light), var(--bronze-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; color: #9A9880;
+    margin-bottom: 40px; font-weight: 300;
+  }
+  .hero-bullets {
+    list-style: none; margin-bottom: 48px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .hero-bullets li {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 0.95rem; color: #C8C5B0; font-weight: 300;
+  }
+  .hero-bullets li::before {
+    content: '✦';
+    color: var(--bronze); font-size: 0.6rem; margin-top: 6px; flex-shrink: 0;
+  }
+  .hero-bullets li strong { color: #F5F3E8; font-weight: 400; }
+  .hero-cta-wrap {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+    color: #F5F3E8; border: none; border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: opacity var(--transition), transform 0.2s;
+    box-shadow: 0 8px 32px rgba(106,138,87,0.35);
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+  .btn-price-note {
+    font-size: 0.78rem; color: #6E6E5E; letter-spacing: 0.05em;
+  }
+  .btn-price-note strong { color: #F5F3E8; }
+
+  /* hero right — mock ebook cover */
+  .hero-right {
+    position: relative; z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 80px 80px 80px 20px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 280px;
+    flex: 1 1 280px;
+  }
+  .ebook-mockup {
+    position: relative;
+    width: 280px;
+  }
+  .ebook-mockup::before { display: none; }
+  .ebook-cover {
+    width: 280px;
+    background: linear-gradient(160deg, #232318 0%, #1a1a12 100%);
+    border-radius: 4px 8px 8px 4px;
+    padding: 44px 32px;
+    box-shadow:
+      -6px 0 0 rgba(0,0,0,0.5),
+      0 20px 60px rgba(0,0,0,0.5),
+      inset 4px 0 8px rgba(255,255,255,0.04);
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 0;
+    border-left: 4px solid rgba(178,158,120,0.3);
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-10px) rotate(-1deg); }
+  }
+  .ebook-cover-label {
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--sage-light); margin-bottom: 20px;
+  }
+  .ebook-cover-line {
+    width: 50px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+    margin-bottom: 20px;
+  }
+  .ebook-cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem; font-weight: 700;
+    color: #F5F3E8; line-height: 1.2; margin-bottom: 8px;
+  }
+  .ebook-cover-title em {
+    font-style: italic; color: var(--bronze-light);
+  }
+  .ebook-cover-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem; color: #9A9880; margin-bottom: 32px;
+  }
+  .ebook-cover-line2 {
+    width: 30px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(178,158,120,0.4), transparent);
+    margin-bottom: 32px;
+  }
+  .ebook-cover-author {
+    font-size: 0.68rem; letter-spacing: 0.12em; color: #9A9880;
+    text-transform: uppercase;
+  }
+  .ebook-badge {
+    position: absolute; top: -16px; right: -16px;
+    width: 72px; height: 72px;
+    background: var(--bronze);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 4px 20px rgba(181,149,92,0.5);
+  }
+  @keyframes pulse-badge {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(181,149,92,0.5); }
+    50% { transform: scale(1.06); box-shadow: 0 6px 28px rgba(181,149,92,0.7); }
+  }
+  .ebook-badge-price {
+    font-size: 1.1rem; font-weight: 900; color: #1C1C16; line-height: 1;
+  }
+  .ebook-badge-label {
+    font-size: 0.5rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #3A3A30;
+  }
+
+  /* ── TRUST BAR ── */
+  #trust {
+    background: var(--cream-dark);
+    border-top: 1px solid rgba(181,149,92,0.15);
+    border-bottom: 1px solid rgba(181,149,92,0.15);
+    padding: 24px 80px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.8rem; letter-spacing: 0.06em;
+    color: var(--charcoal-light);
+  }
+  .trust-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--sage), var(--bronze));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 80px; }
+  section.narrow { max-width: 780px; margin: 0 auto; }
+  .section-header {
+    text-align: center; margin-bottom: 64px;
+  }
+  .section-header .ornament { margin-bottom: 20px; }
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  h2.section-title em {
+    font-style: italic; color: var(--bronze);
+  }
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; color: var(--charcoal-light);
+    max-width: 540px; margin: 0 auto;
+  }
+
+  /* ── DOR ── */
+  #dor {
+    background: var(--charcoal);
+    padding: 100px 80px;
+  }
+  .dor-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; max-width: 900px; margin: 0 auto;
+  }
+  .dor-item {
+    background: rgba(255,255,255,0.04);
+    padding: 36px;
+    transition: background var(--transition);
+  }
+  .dor-item:hover { background: rgba(255,255,255,0.07); }
+  .dor-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-style: italic;
+    color: #C8C5B0; line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .dor-quote::before { content: '"'; color: var(--bronze); }
+  .dor-quote::after { content: '"'; color: var(--bronze); }
+  .dor-tag {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--charcoal-light);
+  }
+  .dor-header {
+    text-align: center; margin-bottom: 60px;
+  }
+  .dor-header .section-label { color: var(--sage-light); }
+  .dor-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: #F5F3E8; font-weight: 700; line-height: 1.15;
+  }
+  .dor-header h2 em { font-style: italic; color: var(--bronze-light); }
+
+  /* ── CONTEUDO ── */
+  #conteudo { background: var(--white); }
+  .chapters-list {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; max-width: 900px; margin: 0 auto;
+  }
+  .chapter-item {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 28px 24px;
+    background: var(--cream);
+    transition: background var(--transition);
+  }
+  .chapter-item:hover { background: var(--cream-dark); }
+  .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700;
+    color: var(--bronze-light); line-height: 1;
+    flex-shrink: 0; opacity: 0.5;
+  }
+  .chapter-info {}
+  .chapter-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .chapter-desc {
+    font-size: 0.85rem; color: var(--charcoal-light);
+    line-height: 1.6;
+  }
+
+  /* ── PARA QUEM ── */
+  #para-quem {
+    background: var(--cream-dark);
+  }
+  .audience-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; max-width: 900px; margin: 0 auto;
+  }
+  .audience-card {
+    background: var(--white);
+    padding: 40px 36px;
+    border-top: 3px solid transparent;
+    transition: border-color var(--transition), transform 0.2s;
+  }
+  .audience-card:hover { transform: translateY(-4px); }
+  .audience-card.sage { border-top-color: var(--sage); }
+  .audience-card.bronze { border-top-color: var(--bronze); }
+  .audience-icon { font-size: 2rem; margin-bottom: 16px; }
+  .audience-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .audience-list {
+    list-style: none; display: flex; flex-direction: column; gap: 10px;
+  }
+  .audience-list li {
+    font-size: 0.9rem; color: var(--charcoal-light);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .audience-list li::before {
+    content: '→'; color: var(--sage-dark); flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ── BONUS ── */
+  #bonus {
+    background: var(--charcoal);
+  }
+  .bonus-header { text-align: center; margin-bottom: 60px; }
+  .bonus-header .section-label { color: var(--sage-light); }
+  .bonus-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: #F5F3E8; font-weight: 700;
+  }
+  .bonus-header h2 em { font-style: italic; color: var(--bronze-light); }
+  .bonus-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; max-width: 960px; margin: 0 auto;
+  }
+  .bonus-card {
+    background: rgba(255,255,255,0.04);
+    padding: 36px 28px;
+    text-align: center;
+    transition: background var(--transition);
+  }
+  .bonus-card:hover { background: rgba(255,255,255,0.08); }
+  .bonus-icon {
+    font-size: 2.2rem; margin-bottom: 20px;
+  }
+  .bonus-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600;
+    color: #F5F3E8; margin-bottom: 10px;
+  }
+  .bonus-desc {
+    font-size: 0.85rem; color: #9A9880; line-height: 1.6;
+  }
+  .bonus-tag {
+    display: inline-block; margin-top: 16px;
+    padding: 4px 12px;
+    background: rgba(143,168,122,0.15);
+    border: 1px solid rgba(143,168,122,0.3);
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage-light); border-radius: 2px;
+  }
+
+  /* ── AUTOR ── */
+  #autor {
+    background: var(--white);
+  }
+  .autor-inner {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 60px; align-items: center;
+    max-width: 800px; margin: 0 auto;
+    justify-items: center;
+  }
+  .autor-avatar {
+    width: 160px; height: 160px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--charcoal-mid), var(--charcoal));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px var(--cream-dark), 0 0 0 6px var(--bronze);
+    overflow: hidden;
+  }
+  .autor-avatar img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+    border-radius: 50%;
+  }
+  .autor-info {}
+  .autor-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .autor-role {
+    font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sage-dark); margin-bottom: 20px;
+  }
+  .autor-bio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--charcoal-light);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .autor-social {
+    display: flex; gap: 14px;
+  }
+  .autor-social a {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--bronze-dark); text-decoration: none;
+    border-bottom: 1px solid var(--bronze-light);
+    padding-bottom: 2px;
+    transition: color var(--transition);
+  }
+  .autor-social a:hover { color: var(--sage-dark); }
+
+  /* ── PRECO ── */
+  #preco {
+    background: var(--cream);
+    text-align: center;
+  }
+  .price-box {
+    background: var(--charcoal);
+    max-width: 480px; margin: 0 auto;
+    padding: 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-box::before {
+    content: '';
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(143,168,122,0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .price-box-label {
+    font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--sage-light); margin-bottom: 24px;
+  }
+  .price-original {
+    font-size: 1rem; color: #6E6E5E;
+    text-decoration: line-through; margin-bottom: 4px;
+  }
+  .price-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem; font-weight: 700;
+    color: #F5F3E8; line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-value span {
+    font-size: 1.6rem; vertical-align: super;
+    color: var(--bronze-light);
+  }
+  .price-installment {
+    font-size: 0.85rem; color: #9A9880; margin-bottom: 36px;
+  }
+  .price-divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(178,158,120,0.4), transparent);
+    margin: 0 auto 36px;
+  }
+  .price-features {
+    list-style: none; margin-bottom: 40px;
+    display: flex; flex-direction: column; gap: 12px;
+    text-align: left;
+  }
+  .price-features li {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.88rem; color: #C8C5B0;
+  }
+  .price-features li::before {
+    content: '✓';
+    width: 22px; height: 22px;
+    background: rgba(143,168,122,0.2);
+    border: 1px solid rgba(143,168,122,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; color: var(--sage-light);
+    flex-shrink: 0; border-radius: 50%;
+  }
+  .btn-primary-large {
+    display: block; width: 100%;
+    padding: 18px 24px; text-align: center;
+    background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+    color: #F5F3E8; border: none; border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    box-shadow: 0 8px 32px rgba(106,138,87,0.4);
+    transition: opacity var(--transition), transform 0.2s;
+    margin-bottom: 16px;
+  }
+  .btn-primary-large:hover { opacity: 0.88; transform: translateY(-2px); }
+  .price-guarantee {
+    font-size: 0.75rem; color: #6E6E5E;
+  }
+  .price-guarantee strong { color: #9A9880; }
+
+  /* ── FAQ ── */
+  #faq { background: var(--cream-dark); }
+  .faq-list {
+    max-width: 720px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .faq-item {
+    background: var(--white);
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%; text-align: left;
+    padding: 24px 28px;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--charcoal);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px;
+    transition: color var(--transition);
+  }
+  .faq-question:hover { color: var(--bronze-dark); }
+  .faq-arrow { color: var(--bronze); transition: transform var(--transition); flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; color: var(--charcoal-light);
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; }
+  .faq-answer-inner { padding: 0 28px 24px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 48px 80px;
+    text-align: center;
+    border-top: 1px solid rgba(181,149,92,0.15);
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: #9A9880;
+    margin-bottom: 8px;
+  }
+  .footer-copy {
+    font-size: 0.75rem; color: #4A4A3A; letter-spacing: 0.06em;
+  }
+
+  /* ── STICKY CTA ── */
+  #sticky-cta {
+    position: fixed; bottom: 24px; right: 24px; z-index: 100;
+    opacity: 0; transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  #sticky-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+  .sticky-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    background: var(--charcoal);
+    color: #F5F3E8; border-radius: 40px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(181,149,92,0.4);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    transition: background var(--transition);
+  }
+  .sticky-btn:hover { background: var(--charcoal-mid); }
+  .sticky-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--sage); flex-shrink: 0;
+    animation: blink 1.8s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{ opacity: 1; } 50%{ opacity: 0.3; } }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero { -ms-flex-wrap: wrap; flex-wrap: wrap; min-height: auto; }
+    .hero-left, .hero-right { -ms-flex: 1 1 100%; flex: 1 1 100%; }
+    .hero-left { padding: 80px 40px 40px; }
+    .hero-right { padding: 20px 40px 80px; }
+    .dor-grid, .chapters-list, .audience-grid, .bonus-grid { grid-template-columns: 1fr; }
+    section { padding: 72px 40px; }
+    #trust { padding: 20px 40px; gap: 24px; }
+    .autor-inner { grid-template-columns: 1fr; text-align: center; }
+    .autor-avatar { margin: 0 auto; }
+    .autor-social { justify-content: center; }
+    footer { padding: 40px; }
+  }
+  @media (max-width: 600px) {
+    .hero-left { padding: 60px 24px 32px; }
+    .hero-right { padding: 16px 24px 60px; }
+    section { padding: 60px 24px; }
+    .price-box { padding: 44px 28px; }
+    footer { padding: 32px 24px; }
+  }
+
+  /* ── SCROLL ANIMATION ── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ───────────────────────────────── HERO ─── -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-left">
+    <div class="hero-kicker">E-book Digital · Direito de Família</div>
+    <h1 class="hero-title">Regimes de Bens<br><em>no Casamento</em></h1>
+    <p class="hero-subtitle">O Guia Completo para Noivos e Advogados</p>
+    <ul class="hero-bullets">
+      <li><strong>Entenda os 4 regimes de bens</strong> e seus impactos reais no seu patrimônio</li>
+      <li><strong>Quiz interativo</strong> para descobrir qual regime é ideal para o seu perfil</li>
+      <li><strong>Quadro comparativo completo</strong> + Checklist pré-casamento</li>
+      <li><strong>Casos práticos</strong> e linguagem acessível para quem não é da área do Direito</li>
+    </ul>
+    <div class="hero-cta-wrap">
+      <a href="#preco" class="btn-primary">Quero o E-book →</a>
+      <span class="btn-price-note">Por apenas <strong>R$ 47</strong> · Acesso imediato</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="ebook-mockup">
+      <div class="ebook-cover">
+        <div class="ebook-cover-label">E-book · Direito de Família</div>
+        <div class="ebook-cover-line"></div>
+        <div class="ebook-cover-title">Regimes de Bens<br><em>no Casamento</em></div>
+        <div class="ebook-cover-sub">O Guia Completo para<br>Noivos e Advogados</div>
+        <div class="ebook-cover-line2"></div>
+        <div class="ebook-cover-author">Thamirys Silvera Martin · Advogada</div>
+      </div>
+      <div class="ebook-badge">
+        <div class="ebook-badge-price">R$47</div>
+        <div class="ebook-badge-label">acesso já</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────── TRUST BAR ─── -->
+<div id="trust">
+  <div class="trust-item">
+    <div class="trust-icon">⚡</div>
+    Acesso imediato após compra
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📱</div>
+    Funciona em qualquer dispositivo
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🔒</div>
+    Compra 100% segura
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📋</div>
+    11 capítulos + quiz interativo
+  </div>
+</div>
+
+<!-- ──────────────────────────────── DOR ─── -->
+<section id="dor">
+  <div class="dor-header reveal">
+    <span class="section-label">Você se identifica?</span>
+    <h2>Casar sem entender o regime de bens<br><em>pode custar caro — literalmente.</em></h2>
+  </div>
+  <div class="dor-grid reveal">
+    <div class="dor-item">
+      <p class="dor-quote">Nunca ouvi falar em regime de bens antes de chegar no cartório.</p>
+      <span class="dor-tag">R.M., 31 anos</span>
+    </div>
+    <div class="dor-item">
+      <p class="dor-quote">Assinei o pacto antenupcial sem entender o que estava assinando.</p>
+      <span class="dor-tag">C.F., 29 anos</span>
+    </div>
+    <div class="dor-item">
+      <p class="dor-quote">Descobri que minha dívida comprometia o patrimônio dela só no processo de divórcio.</p>
+      <span class="dor-tag">A.L., 44 anos</span>
+    </div>
+    <div class="dor-item">
+      <p class="dor-quote">Pensava que separação de bens significava que meu cônjuge não herdaria nada.</p>
+      <span class="dor-tag">P.S., 38 anos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────── CONTEÚDO ─── -->
+<section id="conteudo">
+  <div class="section-header reveal">
+    <span class="ornament"></span>
+    <span class="section-label" style="margin-top:16px;">O que você vai aprender</span>
+    <h2 class="section-title">11 capítulos para você<br><em>nunca mais ter dúvidas</em></h2>
+  </div>
+  <div class="chapters-list reveal">
+    <div class="chapter-item">
+      <div class="chapter-num">01</div>
+      <div class="chapter-info">
+        <div class="chapter-name">O Que é Regime de Bens?</div>
+        <div class="chapter-desc">Base legal, quando é definido e quem não pode escolher livremente.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">02</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Comunhão Parcial de Bens</div>
+        <div class="chapter-desc">O regime mais comum no Brasil — o que entra e o que fica de fora da divisão.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">03</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Comunhão Universal de Bens</div>
+        <div class="chapter-desc">Tudo junto, inclusive dívidas — entenda os riscos e vantagens.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">04</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Separação de Bens</div>
+        <div class="chapter-desc">Convencional vs. obrigatória: não é tão simples quanto parece.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">05</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Participação Final nos Aquestos</div>
+        <div class="chapter-desc">O regime mais complexo e menos conhecido — explicado com clareza.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">06</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Quadro Comparativo Interativo</div>
+        <div class="chapter-desc">Compare os 4 regimes lado a lado em critério por critério.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">07</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Como Escolher o Regime Ideal</div>
+        <div class="chapter-desc">Perfis de casais + quiz para descobrir qual regime combina com você.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">08</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Pacto Antenupcial</div>
+        <div class="chapter-desc">O que é, quando é necessário, como funciona na prática.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">09</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Alteração do Regime Após o Casamento</div>
+        <div class="chapter-desc">É possível? Quais os requisitos? Tudo sobre a mudança judicial.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">10</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Casos Reais Comentados</div>
+        <div class="chapter-desc">Situações práticas para fixar o aprendizado de cada regime.</div>
+      </div>
+    </div>
+    <div class="chapter-item">
+      <div class="chapter-num">11</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Checklist Pré-Casamento</div>
+        <div class="chapter-desc">Lista completa de perguntas a responder antes de assinar qualquer documento.</div>
+      </div>
+    </div>
+    <div class="chapter-item" style="background:var(--cream-dark);">
+      <div class="chapter-num" style="color:var(--sage); opacity:1;">✦</div>
+      <div class="chapter-info">
+        <div class="chapter-name">Considerações Finais</div>
+        <div class="chapter-desc">Resumo das principais decisões e próximos passos práticos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────── PARA QUEM ─── -->
+<section id="para-quem">
+  <div class="section-header reveal">
+    <span class="ornament"></span>
+    <span class="section-label" style="margin-top:16px;">Ideal para você se…</span>
+    <h2 class="section-title">Este e-book foi escrito<br><em>pensando em você</em></h2>
+  </div>
+  <div class="audience-grid reveal">
+    <div class="audience-card sage">
+      <div class="audience-icon">💍</div>
+      <div class="audience-title">Noivos e Casais</div>
+      <ul class="audience-list">
+        <li>Estão planejando o casamento e querem entender o que estão assinando</li>
+        <li>Nunca ouviram falar de regime de bens antes do cartório</li>
+        <li>Querem proteger o patrimônio que já construíram</li>
+        <li>Têm empresa, herdeiros ou situação financeira específica</li>
+      </ul>
+    </div>
+    <div class="audience-card bronze">
+      <div class="audience-icon">⚖️</div>
+      <div class="audience-title">Estudantes e Advogados</div>
+      <ul class="audience-list">
+        <li>Estudam Direito de Família e precisam de material de revisão</li>
+        <li>Advogados que querem uma referência didática e rápida</li>
+        <li>Profissionais que atendem clientes em dúvida sobre regime</li>
+        <li>Querem dominar o tema e se destacar no atendimento em Direito de Família</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────── BÔNUS ─── -->
+<section id="bonus">
+  <div class="bonus-header reveal">
+    <span class="section-label">Incluído no e-book</span>
+    <h2>Muito mais do que texto.<br><em>Uma experiência completa.</em></h2>
+  </div>
+  <div class="bonus-grid reveal">
+    <div class="bonus-card">
+      <div class="bonus-icon">🎯</div>
+      <div class="bonus-title">Quiz Interativo</div>
+      <div class="bonus-desc">Responda 8 perguntas sobre seu perfil e descubra qual regime combina com você e seu parceiro.</div>
+      <span class="bonus-tag">Incluso</span>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">📊</div>
+      <div class="bonus-title">Comparativo Interativo</div>
+      <div class="bonus-desc">Filtre e compare os 4 regimes por critério: herança, dívidas, divórcio, patrimônio pré-casamento e mais.</div>
+      <span class="bonus-tag">Incluso</span>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">✅</div>
+      <div class="bonus-title">Checklist Completo</div>
+      <div class="bonus-desc">Lista interativa com todas as perguntas que você precisa responder antes de escolher o regime e ir ao cartório.</div>
+      <span class="bonus-tag">Incluso</span>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">📖</div>
+      <div class="bonus-title">Glossário Jurídico</div>
+      <div class="bonus-desc">Termos técnicos com tooltips explicativos para leitura fluida sem precisar de dicionário.</div>
+      <span class="bonus-tag">Incluso</span>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">🌙</div>
+      <div class="bonus-title">Modo Claro e Escuro</div>
+      <div class="bonus-desc">Leitura confortável em qualquer horário e ambiente, no celular, tablet ou computador.</div>
+      <span class="bonus-tag">Incluso</span>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">⚡</div>
+      <div class="bonus-title">Acesso Vitalício</div>
+      <div class="bonus-desc">Pague uma vez e acesse para sempre. Guarde o arquivo e leia quando precisar, offline ou online.</div>
+      <span class="bonus-tag">Incluso</span>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────── AUTOR ─── -->
+<section id="autor">
+  <div class="autor-inner reveal">
+    <div class="autor-avatar"><img src="data:image/jpeg;base64,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" alt="Thamirys Silvera Martin" /></div>
+    <div class="autor-info">
+      <div class="autor-name">Thamirys Silvera Martin</div>
+      <div class="autor-role">Advogada · Direito de Família e Sucessões</div>
+      <p class="autor-bio">
+        Advogada com mais de 5 anos de atuação, especialista em Direito de Família e Sucessões. Atua com casamentos, divórcios, inventários e planejamento patrimonial. Cria conteúdo jurídico educativo no Instagram e TikTok tornando o Direito acessível para quem mais precisa — as pessoas comuns tomando decisões importantes.
+      </p>
+      <div class="autor-social">
+        <a href="https://instagram.com/thamirysmartin.adv" target="_blank">@thamirysmartin.adv →</a>
+        <a href="https://tiktok.com/@thamirysmartin" target="_blank">@thamirysmartin →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────── PREÇO ─── -->
+<section id="preco">
+  <div class="section-header reveal" style="margin-bottom:48px;">
+    <span class="ornament"></span>
+    <span class="section-label" style="margin-top:16px;">Investimento</span>
+    <h2 class="section-title">O conhecimento certo<br><em>antes de uma decisão para a vida toda.</em></h2>
+  </div>
+  <div class="price-box reveal">
+    <div class="price-box-label">E-book · Acesso Vitalício</div>
+    <div class="price-original">De R$ 97,00</div>
+    <div class="price-value"><span>R$</span>47</div>
+    <div class="price-installment">ou 2x de R$ 24,50 sem juros</div>
+    <div class="price-divider"></div>
+    <ul class="price-features">
+      <li>11 capítulos completos sobre os 4 regimes de bens</li>
+      <li>Quiz interativo para descobrir seu perfil</li>
+      <li>Quadro comparativo e checklist interativos</li>
+      <li>Glossário com tooltips explicativos</li>
+      <li>Acesso imediato após a compra</li>
+      <li>Funciona em celular, tablet e computador</li>
+      <li>Acesso vitalício — seu para sempre</li>
+    </ul>
+    <a href="LINK_CHECKOUT_AQUI" class="btn-primary-large">Quero o E-book Agora →</a>
+    <div class="price-guarantee">🔒 <strong>Compra segura</strong> · Pagamento processado por plataforma certificada</div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────── FAQ ─── -->
+<section id="faq">
+  <div class="section-header reveal">
+    <span class="ornament"></span>
+    <span class="section-label" style="margin-top:16px;">Dúvidas frequentes</span>
+    <h2 class="section-title">Perguntas<br><em>e respostas</em></h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Como recebo o e-book após a compra?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Após a confirmação do pagamento, você recebe por e-mail o código de acesso e o link para baixar o arquivo. O acesso é imediato — em menos de 5 minutos você já está lendo.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Funciona no celular?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Sim! O e-book é 100% responsivo e otimizado para celular, tablet e computador. Você pode ler direto no navegador, sem precisar instalar nenhum aplicativo.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Precisa ter conhecimento jurídico para entender?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Não. O e-book foi escrito para ser acessível a qualquer pessoa. Os termos técnicos têm explicações em tooltips, e o conteúdo usa linguagem clara com exemplos práticos do cotidiano.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        O e-book substitui uma consulta com advogado?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">O e-book tem finalidade educacional. Ele prepara você para entender os regimes e fazer perguntas melhores, mas não substitui a orientação jurídica individualizada para o seu caso específico.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Posso compartilhar com meu namorado/a?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Cada compra é individual e protegida com código de acesso único. Para uso por duas pessoas, são necessárias duas licenças. Isso garante que o conteúdo seja sempre atualizado e sustentável.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────── FOOTER ─── -->
+<footer>
+  <div class="footer-name">Thamirys Silvera Martin — Advogada</div>
+  <div class="footer-copy">© 2025 · Todos os direitos reservados · Conteúdo de caráter exclusivamente educacional</div>
+</footer>
+
+<!-- ──────────────────────────── STICKY CTA ─── -->
+<div id="sticky-cta">
+  <a href="#preco" class="sticky-btn">
+    <span class="sticky-dot"></span>
+    Quero o E-book — R$ 47
+  </a>
+</div>
+
+<script>
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Sticky CTA
+window.addEventListener('scroll', () => {
+  const sticky = document.getElementById('sticky-cta');
+  sticky.classList.toggle('visible', window.scrollY > 600);
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
